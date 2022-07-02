@@ -1,6 +1,7 @@
 package com.serenaa.jojo;
 
 import com.mojang.logging.LogUtils;
+import com.serenaa.jojo.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,8 @@ public class JoJo {
 
     public JoJo() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
